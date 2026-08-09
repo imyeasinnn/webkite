@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" as="image" href="/assets/hero-contractor-CbwBK6jz.jpg" />
+    <link rel="stylesheet" href="/assets/styles-CCXSHDRV.css" data-precedence="default" />
+    <link rel="stylesheet" href="/assets.calendly.com/assets/external/widget.css" data-precedence="default" />
+    <script defer src="/assets.calendly.com/assets/external/widget.js"></script>
+    <script>
+        function openCalendlyPopup(prefill = {}) {
+            const url = `https://calendly.com/renovreach/15min`;
+            if (window.Calendly?.initPopupWidget) {
+                window.Calendly.initPopupWidget({ url, prefill });
+                return;
+            }
+            const params = new URLSearchParams();
+            if (prefill.name) params.set(`name`, prefill.name);
+            if (prefill.email) params.set(`email`, prefill.email);
+            if (prefill.organization) params.set(`organization`, prefill.organization);
+            if (prefill.customAnswers) {
+                for (const key in prefill.customAnswers) {
+                    if (prefill.customAnswers[key]) {
+                        params.set(key, prefill.customAnswers[key]);
+                    }
+                }
+            }
+            window.open(params.toString() ? `${url}?${params.toString()}` : url, `_blank`, `noopener,noreferrer`);
+        }
+
+        function openMobileMenu() {
+            const panel = document.getElementById('mobileMenuPanel');
+            const button = document.getElementById('mobileMenuBtn');
+            if (!panel || !button) return;
+
+            panel.classList.add('mobile-panel-open');
+            panel.setAttribute('aria-hidden', 'false');
+            button.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeMobileMenu() {
+            const panel = document.getElementById('mobileMenuPanel');
+            const button = document.getElementById('mobileMenuBtn');
+            if (!panel || !button) return;
+
+            panel.classList.remove('mobile-panel-open');
+            panel.setAttribute('aria-hidden', 'true');
+            button.setAttribute('aria-expanded', 'false');
+        }
+
+        function toggleMobileMenu(button) {
+            const panel = document.getElementById('mobileMenuPanel');
+            if (!panel) return;
+
+            const isOpen = panel.classList.contains('mobile-panel-open');
+            if (isOpen) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+
+            if (button) {
+                button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+            }
+        }
+
+        function animateStatCounter(element) {
+            const endValue = Number(element.dataset.value || 0);
+            const suffix = element.dataset.suffix || '';
+            const prefix = element.dataset.prefix || '';
+            const decimals = Number(element.dataset.decimals || 0);
+            const duration = Number(element.dataset.duration || 1200);
+            const startTime = performance.now();
+
+            function tick(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = endValue * eased;
+
+                if (decimals > 0) {
+                    element.textContent = prefix + current.toLocaleString(undefined, {
+                        minimumFractionDigits: decimals,
+                        maximumFractionDigits: decimals
+                    }) + suffix;
+                } else {
+                    element.textContent = prefix + Math.round(current) + suffix;
+                }
+
+                if (progress < 1) {
+                    requestAnimationFrame(tick);
+                } else {
+                    element.textContent = prefix + (decimals > 0 ? endValue.toLocaleString(undefined, {
+                        minimumFractionDigits: decimals,
+                        maximumFractionDigits: decimals
+                    }) : Math.round(endValue)) + suffix;
+                }
+            }
+
+            requestAnimationFrame(tick);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const statNodes = document.querySelectorAll('[data-stat-counter]');
+            statNodes.forEach((node) => animateStatCounter(node));
+        });
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" data-precedence="default" />
+    <title>RenovReach</title>
+    <meta name="description" content="Never miss another job. RenovReach&#x27;s AI answers your phone 24/7, books appointments, and texts you the details — built for busy contractors and home-service pros."
+    />
+    <meta name="author" content="RenovReach" />
+    <meta property="og:title" content="RenovReach — AI Voice Receptionist for Contractors" />
+    <meta property="og:description" content="Never miss another job. RenovReach&#x27;s AI answers your phone 24/7, books appointments, and texts you the details — built for busy contractors and home-service pros." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="RenovReach — AI Voice Receptionist for Contractors" />
+    <meta name="twitter:description" content="Never miss another job. RenovReach&#x27;s AI answers your phone 24/7, books appointments, and texts you the details — built for busy contractors and home-service pros." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1200&amp;q=80" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1200&amp;q=80" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <style>
+        #mobileMenuPanel {
+            display: none;
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+            transform: translateY(-8px);
+        }
+
+        #mobileMenuPanel.mobile-panel-open {
+            display: block;
+            opacity: 1;
+            pointer-events: auto;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        @media (min-width: 768px) {
+            #mobileMenuPanel {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--$-->
+    <div class="min-h-screen bg-background text-foreground">
+        <div class="fixed top-3 md:top-5 inset-x-0 z-50 px-3 md:px-6 pointer-events-none">
+            <header class="pointer-events-auto mx-auto max-w-6xl rounded-2xl transition-all duration-[320ms] ease-[cubic-bezier(0.22,1,0.36,1)] glass-nav-idle py-3">
+                <div class="mx-auto max-w-7xl px-5 flex items-center justify-between"><a href="#top" class="flex items-center gap-2.5 font-display font-bold text-lg tracking-tight text-[#F6F4EF]" style="font-family:var(--font-display);opacity:0;transform:translateY(-8px)"><span class="relative inline-flex h-7 w-7 items-center justify-center shrink-0"><span class="absolute inset-0 rounded-full bg-primary/60 pulse-ring"></span><span class="absolute inset-0 rounded-full bg-primary/40 pulse-ring" style="animation-delay:1s"></span><span class="relative inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary text-primary-foreground logo-phone-bounce"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call h-3.5 w-3.5" aria-hidden="true"><path d="M13 2a9 9 0 0 1 9 9"></path><path d="M13 6a5 5 0 0 1 5 5"></path><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg></span></span><span>RenovReach</span></a>
+                    <nav
+                        class="hidden md:flex items-center gap-8 text-sm font-medium text-[#F6F4EF]/75" style="opacity:0;transform:translateY(-8px)"><a href="#how" class="nav-link hover:text-[#F6F4EF]">Process</a><a href="#demo" class="nav-link hover:text-[#F6F4EF]">Listen</a><a href="#features" class="nav-link hover:text-[#F6F4EF]">Features</a><a href="#pricing" class="nav-link hover:text-[#F6F4EF]">Pricing</a>
+                        <a
+                            href="#faq" class="nav-link hover:text-[#F6F4EF]">FAQ</a>
+                            </nav>
+                            <div class="hidden md:flex items-center gap-3" style="opacity:0;transform:translateY(-8px)"><a href="tel:+18885551234" class="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-sm font-semibold text-[#F6F4EF] hover:border-primary/60 hover:text-primary transition-colors"><span class="flex items-end gap-[2px] h-3"><span class="mini-wave-bar w-[2px] rounded-full bg-primary" style="height:50%;animation-delay:0ms"></span><span class="mini-wave-bar w-[2px] rounded-full bg-primary" style="height:90%;animation-delay:90ms"></span><span class="mini-wave-bar w-[2px] rounded-full bg-primary" style="height:40%;animation-delay:180ms"></span><span class="mini-wave-bar w-[2px] rounded-full bg-primary" style="height:75%;animation-delay:270ms"></span><span class="mini-wave-bar w-[2px] rounded-full bg-primary" style="height:55.00000000000001%;animation-delay:360ms"></span></span>(888) 555-1234</a>
+                                <button type="button" onclick="openCalendlyPopup()" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow h-9 py-2 cta-lift bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-5 shadow-soft group">Book a Discovery Call<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right cta-arrow ml-1.5 h-4 w-4"
+                                        aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+                            </div><button class="md:hidden grid h-10 w-10 place-items-center rounded-lg border border-white/15 bg-white/5 text-[#F6F4EF]" aria-label="Toggle menu" onclick="toggleMobileMenu(this)" id="mobileMenuBtn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-5 w-5 mobile-menu-icon" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button></div>
+                <div
+                    class="mobile-menu-panel absolute inset-x-0 top-full border-t border-border bg-background/95 backdrop-blur-xl shadow-lift" id="mobileMenuPanel" aria-hidden="true" aria-label="Mobile navigation">
+                    <div class="mx-auto max-w-7xl px-5 py-5 flex flex-col gap-4"><a href="#how" class="text-base font-medium text-ink" onclick="closeMobileMenu()">Process</a><a href="#demo" class="text-base font-medium text-ink" onclick="closeMobileMenu()">Listen</a><a href="#features" class="text-base font-medium text-ink" onclick="closeMobileMenu()">Features</a><a href="#pricing" class="text-base font-medium text-ink" onclick="closeMobileMenu()">Pricing</a>
+                        <a
+                            href="#faq" class="text-base font-medium text-ink" onclick="closeMobileMenu()">FAQ</a><a href="tel:+18885551234" class="inline-flex items-center gap-2 self-start rounded-full border border-border px-3.5 py-1.5 text-sm font-semibold text-ink"><span class="flex items-end gap-[2px] h-3"><span class="mini-wave-bar w-[2px] rounded-full bg-primary" style="height:50%;animation-delay:0ms"></span><span class="mini-wave-bar w-[2px] rounded-full bg-primary" style="height:90%;animation-delay:90ms"></span><span class="mini-wave-bar w-[2px] rounded-full bg-primary" style="height:40%;animation-delay:180ms"></span><span class="mini-wave-bar w-[2px] rounded-full bg-primary" style="height:75%;animation-delay:270ms"></span><span class="mini-wave-bar w-[2px] rounded-full bg-primary" style="height:55.00000000000001%;animation-delay:360ms"></span></span>(888) 555-1234</a>
+                            <button type="button" onclick="openCalendlyPopup();closeMobileMenu()" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow h-9 px-4 py-2 cta-lift bg-primary hover:bg-primary/90 text-primary-foreground rounded-full mt-2 group">Book a Discovery Call<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right cta-arrow ml-1.5 h-4 w-4"
+                                    aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+                    </div>
+        </div>
+        </header>
+    </div>
+    <main>
+        <section id="top" class="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
+            <div class="pointer-events-none absolute inset-0 -z-10">
+                <div class="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-amber-soft blur-3xl opacity-70"></div>
+                <div class="absolute -bottom-40 -left-40 h-[500px] w-[500px] rounded-full bg-amber-soft blur-3xl opacity-50"></div>
+            </div>
+            <div class="mx-auto max-w-7xl px-5 grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
+                <div>
+                    <h1 class="mt-6 text-[2.5rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-[4.25rem] font-bold tracking-tight text-ink" style="font-family:var(--font-display)"><span class="block" style="opacity:0;transform:translateY(24px)"><span class="neg">Never miss</span></span><span class="block" style="opacity:0;transform:translateY(24px)">another job because</span><span class="block" style="opacity:0;transform:translateY(24px)">you were on a job site.</span></h1>
+                    <p
+                        class="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed" style="opacity:0;transform:translateY(20px)">RenovReach is an AI receptionist that answers your phone 24/7, captures the job details, books the appointment, and texts you the lead — so you <span class="neg">never lose work to voicemail</span> again.</p>
+                        <div class="mt-8 flex flex-col sm:flex-row gap-3"
+                            style="opacity:0;transform:translateY(20px)"><button type="button" onclick="openCalendlyPopup()" class="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow cta-lift group bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 h-12 text-base font-semibold shadow-amber">Book a Discovery Call <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right cta-arrow ml-1 h-4 w-4" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+                            <a
+                                href="tel:+18885551234" class="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background shadow-sm rounded-full h-12 px-6 text-base font-semibold border-ink/15 hover:bg-ink hover:text-white transition-all"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone mr-2 h-4 w-4" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>                                Call &amp; hear it: (888) 555-1234</a>
+                        </div>
+                        <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground" style="opacity:0">
+                            <div class="flex items-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-4 w-4 text-primary"
+                                    aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg> Set up in 48 hours</div>
+                            <div class="flex items-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-4 w-4 text-primary"
+                                    aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg> No contracts</div>
+                            <div class="flex items-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-4 w-4 text-primary"
+                                    aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg> Cancel anytime</div>
+                        </div>
+                </div>
+                <div class="relative" style="opacity:0;transform:scale(0.96)">
+                    <div class="relative rounded-3xl overflow-hidden shadow-lift bg-ink aspect-[4/5] max-w-md mx-auto"><img src="/assets/hero-contractor-CbwBK6jz.jpg" alt="Professional contractor at a job site" width="1200" height="801" class="h-full w-full object-cover object-left" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent"></div>
+                        <div class="absolute left-4 right-4 bottom-4 rounded-2xl bg-white/95 backdrop-blur-md p-4 shadow-lift border border-white/40" style="opacity:0;transform:translateY(20px)">
+                            <div class="flex items-center gap-3">
+                                <div class="relative grid h-11 w-11 place-items-center rounded-full bg-gradient-amber"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-incoming h-5 w-5 text-white"
+                                        aria-hidden="true"><path d="M16 2v6h6"></path><path d="m22 2-6 6"></path><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
+                                    <span
+                                        class="absolute inset-0 rounded-full bg-primary pulse-ring"></span>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <div class="text-[11px] font-semibold uppercase tracking-wider text-primary">Incoming call · Live</div>
+                                    <div class="text-sm font-semibold text-ink truncate">Kitchen remodel — Sarah M.</div>
+                                </div>
+                                <div class="text-xs font-mono text-muted-foreground">00:42</div>
+                            </div>
+                            <div class="mt-3 rounded-xl bg-secondary/70 px-3 py-2.5">
+                                <div class="flex items-center justify-center gap-[3px] h-14"><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:40%;animation-delay:0s;animation-play-state:running"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:70%;animation-delay:0.08s;animation-play-state:running"></span>
+                                    <span
+                                        class="wave-bar w-[3px] rounded-full bg-primary" style="height:50%;animation-delay:0.16s;animation-play-state:running"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:90%;animation-delay:0.24s;animation-play-state:running"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:60%;animation-delay:0.32s;animation-play-state:running"></span>
+                                        <span
+                                            class="wave-bar w-[3px] rounded-full bg-primary" style="height:85%;animation-delay:0.4s;animation-play-state:running"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:45%;animation-delay:0.48s;animation-play-state:running"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:75%;animation-delay:0.56s;animation-play-state:running"></span>
+                                            <span
+                                                class="wave-bar w-[3px] rounded-full bg-primary" style="height:55.00000000000001%;animation-delay:0.64s;animation-play-state:running"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:90%;animation-delay:0.72s;animation-play-state:running"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:50%;animation-delay:0.8s;animation-play-state:running"></span>
+                                                <span
+                                                    class="wave-bar w-[3px] rounded-full bg-primary" style="height:70%;animation-delay:0.88s;animation-play-state:running"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:60%;animation-delay:0.96s;animation-play-state:running"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:80%;animation-delay:1.04s;animation-play-state:running"></span>
+                                                    <span
+                                                        class="wave-bar w-[3px] rounded-full bg-primary" style="height:50%;animation-delay:1.12s;animation-play-state:running"></span>
+                                </div>
+                            </div>
+                            <div class="mt-3 flex items-center gap-2 text-xs text-ink-soft"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles h-3.5 w-3.5 text-primary"
+                                    aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
+                                <span
+                                    class="font-medium">RenovReach is booking an estimate for Tuesday 10 AM…</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden md:block absolute -left-6 top-10 rounded-2xl bg-white border border-border shadow-lift p-4 max-w-[200px]" style="opacity:0;transform:translateX(-20px)">
+                        <div class="text-3xl font-black text-ink">+37%</div>
+                        <div class="text-xs text-muted-foreground mt-1">more booked jobs in the first 30 days</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20 md:py-28 bg-ink text-white relative overflow-hidden">
+            <div class="mx-auto max-w-7xl px-5">
+                <div class="max-w-2xl" style="opacity:0;transform:translateY(24px)">
+                    <div class="text-primary font-semibold text-sm uppercase tracking-wider">The missed-call problem</div>
+                    <h2 class="mt-3 text-3xl md:text-5xl font-black tracking-tight">Every <span class="neg">missed call</span> is a job your competitor just booked.</h2>
+                    <p class="mt-4 text-white/70 text-lg leading-relaxed">You&#x27;re on a ladder. In a crawlspace. Driving between jobs. Meanwhile the phone rings — and the homeowner <span class="neg">moves on in 8 seconds</span>.</p>
+                </div>
+                <div id="missedCallStats" class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="" style="opacity:0;transform:translateY(24px)">
+                        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 h-full hover:bg-white/[0.08] transition-colors">
+                            <div class="text-4xl md:text-5xl font-black text-primary"><span data-stat-counter="" data-value="62" data-suffix="%">62%</span></div>
+                            <div class="mt-3 text-sm text-white/70 leading-relaxed">of calls to small contractors <span class="neg">go to voicemail</span></div>
+                        </div>
+                    </div>
+                    <div class="" style="opacity:0;transform:translateY(24px)">
+                        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 h-full hover:bg-white/[0.08] transition-colors">
+                            <div class="text-4xl md:text-5xl font-black text-primary"><span data-stat-counter="" data-value="85" data-suffix="%">85%</span></div>
+                            <div class="mt-3 text-sm text-white/70 leading-relaxed">of callers <span class="neg">won&#x27;t leave a message</span> — they call the next guy</div>
+                        </div>
+                    </div>
+                    <div class="" style="opacity:0;transform:translateY(24px)">
+                        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 h-full hover:bg-white/[0.08] transition-colors">
+                            <div class="text-4xl md:text-5xl font-black text-primary"><span data-stat-counter="" data-value="12000" data-prefix="$" data-suffix="" data-duration="1600">$12k</span></div>
+                            <div class="mt-3 text-sm text-white/70 leading-relaxed">in <span class="neg">lost jobs</span> per year for the average 2-truck shop</div>
+                        </div>
+                    </div>
+                    <div class="" style="opacity:0;transform:translateY(24px)">
+                        <div class="rounded-2xl bg-white/5 border border-white/10 p-6 h-full hover:bg-white/[0.08] transition-colors">
+                            <div class="text-4xl md:text-5xl font-black text-primary"><span data-stat-counter="" data-value="47" data-suffix="%">47%</span></div>
+                            <div class="mt-3 text-sm text-white/70 leading-relaxed">of homeowner calls come in <span class="neg">after 5pm or on weekends</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="how" class="py-20 md:py-28">
+            <div class="mx-auto max-w-7xl px-5">
+                <div class="max-w-2xl" style="opacity:0;transform:translateY(24px)">
+                    <div class="text-primary font-semibold text-sm uppercase tracking-wider">How RenovReach works</div>
+                    <h2 class="mt-3 text-3xl md:text-5xl font-black tracking-tight text-ink">From <span class="neg">missed call</span> to booked job in under two minutes.</h2>
+                </div>
+                <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-5 relative">
+                    <div class="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+                    <div class="" style="opacity:0;transform:translateY(24px)">
+                        <div class="relative rounded-2xl bg-card border border-border p-6 shadow-soft h-full hover:-translate-y-1 hover:shadow-lift transition-all duration-300">
+                            <div class="flex items-center justify-between">
+                                <div class="grid h-12 w-12 place-items-center rounded-xl bg-amber-soft text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-incoming h-6 w-6"
+                                        aria-hidden="true"><path d="M16 2v6h6"></path><path d="m22 2-6 6"></path><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg></div>
+                                <span
+                                    class="text-xs font-mono text-muted-foreground">0 seconds</span>
+                            </div>
+                            <div class="mt-5 text-xs font-semibold text-primary">STEP
+                                <!-- -->1</div>
+                            <h3 class="mt-1 text-xl font-bold text-ink">Call comes in</h3>
+                            <p class="mt-2 text-sm text-muted-foreground leading-relaxed">We forward your business line — or give you a new one. RenovReach answers in under 2 rings, every time.</p>
+                        </div>
+                    </div>
+                    <div class="" style="opacity:0;transform:translateY(24px)">
+                        <div class="relative rounded-2xl bg-card border border-border p-6 shadow-soft h-full hover:-translate-y-1 hover:shadow-lift transition-all duration-300">
+                            <div class="flex items-center justify-between">
+                                <div class="grid h-12 w-12 place-items-center rounded-xl bg-amber-soft text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square h-6 w-6"
+                                        aria-hidden="true"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path></svg></div><span class="text-xs font-mono text-muted-foreground">60 seconds</span></div>
+                            <div
+                                class="mt-5 text-xs font-semibold text-primary">STEP
+                                <!-- -->2</div>
+                        <h3 class="mt-1 text-xl font-bold text-ink">AI asks the right questions</h3>
+                        <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Name, job type, address, timeline, budget range. Answers in a natural voice — no phone-tree hell.</p>
+                    </div>
+                </div>
+                <div class="" style="opacity:0;transform:translateY(24px)">
+                    <div class="relative rounded-2xl bg-card border border-border p-6 shadow-soft h-full hover:-translate-y-1 hover:shadow-lift transition-all duration-300">
+                        <div class="flex items-center justify-between">
+                            <div class="grid h-12 w-12 place-items-center rounded-xl bg-amber-soft text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar h-6 w-6" aria-hidden="true"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg></div>
+                            <span
+                                class="text-xs font-mono text-muted-foreground">90 seconds</span>
+                        </div>
+                        <div class="mt-5 text-xs font-semibold text-primary">STEP
+                            <!-- -->3</div>
+                        <h3 class="mt-1 text-xl font-bold text-ink">Books or transfers</h3>
+                        <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Books straight into your calendar for estimates, or warm-transfers to your cell if it&#x27;s urgent (leak, no heat).</p>
+                    </div>
+                </div>
+                <div class="" style="opacity:0;transform:translateY(24px)">
+                    <div class="relative rounded-2xl bg-card border border-border p-6 shadow-soft h-full hover:-translate-y-1 hover:shadow-lift transition-all duration-300">
+                        <div class="flex items-center justify-between">
+                            <div class="grid h-12 w-12 place-items-center rounded-xl bg-amber-soft text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell h-6 w-6" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path></svg></div>
+                            <span
+                                class="text-xs font-mono text-muted-foreground">Instant</span>
+                        </div>
+                        <div class="mt-5 text-xs font-semibold text-primary">STEP
+                            <!-- -->4</div>
+                        <h3 class="mt-1 text-xl font-bold text-ink">You get the lead</h3>
+                        <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Text and email hit your phone with the full call summary and recording. Nothing falls through the cracks.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section id="demo" class="py-20 md:py-28 bg-gradient-warm">
+            <div class="mx-auto max-w-7xl px-5">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="" style="opacity:0;transform:translateY(24px)">
+                        <div class="text-primary font-semibold text-sm uppercase tracking-wider">Hear it in action</div>
+                        <h2 class="mt-3 text-3xl md:text-5xl font-black tracking-tight text-ink">Don&#x27;t take our word for it. Listen.</h2>
+                        <p class="mt-4 text-lg text-ink-soft leading-relaxed">This is a real RenovReach agent handling a real call for a real kitchen remodeler. Play it — or call the number and try to trip it up yourself.</p>
+                        <div class="mt-8 flex flex-col sm:flex-row gap-3"><a href="tel:+18885551234" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow bg-ink hover:bg-ink/90 text-white rounded-full h-12 px-6"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone mr-2 h-4 w-4" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg> Call the live demo</a>
+                            <div
+                                class="text-sm text-ink-soft self-center"><a href="tel:+18885551234" class="font-semibold text-ink hover:text-primary">(888) 555-1234</a> · 24/7</div>
+                    </div>
+                </div>
+                <div class="" style="opacity:0;transform:translateY(24px)">
+                    <div class="rounded-3xl bg-white border border-border shadow-lift p-6 md:p-8">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="grid h-11 w-11 place-items-center rounded-full bg-gradient-amber shadow-amber"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call h-5 w-5 text-white"
+                                        aria-hidden="true"><path d="M13 2a9 9 0 0 1 9 9"></path><path d="M13 6a5 5 0 0 1 5 5"></path><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg></div>
+                                <div>
+                                    <div class="text-sm font-bold text-ink">Sample call · Kitchen remodel</div>
+                                    <div class="text-xs text-muted-foreground">Sarah M. → Peak Home Remodeling</div>
+                                </div>
+                            </div><span class="text-[11px] font-semibold text-primary bg-amber-soft rounded-full px-2.5 py-1">LIVE</span></div>
+                        <div class="mt-6 rounded-2xl bg-secondary/70 p-5">
+                            <div class="flex items-center justify-center gap-[3px] h-14"><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:40%;animation-delay:0s;animation-play-state:paused"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:70%;animation-delay:0.08s;animation-play-state:paused"></span>
+                                <span
+                                    class="wave-bar w-[3px] rounded-full bg-primary" style="height:50%;animation-delay:0.16s;animation-play-state:paused"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:90%;animation-delay:0.24s;animation-play-state:paused"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:60%;animation-delay:0.32s;animation-play-state:paused"></span>
+                                    <span
+                                        class="wave-bar w-[3px] rounded-full bg-primary" style="height:85%;animation-delay:0.4s;animation-play-state:paused"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:45%;animation-delay:0.48s;animation-play-state:paused"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:75%;animation-delay:0.56s;animation-play-state:paused"></span>
+                                        <span
+                                            class="wave-bar w-[3px] rounded-full bg-primary" style="height:55.00000000000001%;animation-delay:0.64s;animation-play-state:paused"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:90%;animation-delay:0.72s;animation-play-state:paused"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:50%;animation-delay:0.8s;animation-play-state:paused"></span>
+                                            <span
+                                                class="wave-bar w-[3px] rounded-full bg-primary" style="height:70%;animation-delay:0.88s;animation-play-state:paused"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:60%;animation-delay:0.96s;animation-play-state:paused"></span><span class="wave-bar w-[3px] rounded-full bg-primary" style="height:80%;animation-delay:1.04s;animation-play-state:paused"></span>
+                                                <span
+                                                    class="wave-bar w-[3px] rounded-full bg-primary" style="height:50%;animation-delay:1.12s;animation-play-state:paused"></span>
+                            </div>
+                            <div class="mt-3 h-1 rounded-full bg-border overflow-hidden">
+                                <div class="h-full bg-primary transition-all duration-300" style="width:0%"></div>
+                            </div>
+                            <div class="mt-3 flex items-center justify-between"><button class="grid h-12 w-12 place-items-center rounded-full bg-primary text-primary-foreground shadow-amber hover:scale-105 transition-transform" aria-label="Play"><div class="w-0 h-0 border-y-[7px] border-y-transparent border-l-[11px] border-l-current ml-1"></div></button>
+                                <div
+                                    class="text-xs font-mono text-muted-foreground">0:00
+                                    <!-- -->/ 0:42</div>
+                        </div>
+                    </div>
+                    <div class="mt-6 space-y-3 max-h-64 overflow-hidden">
+                        <div class="flex gap-2.5 text-sm ">
+                            <div class="shrink-0 grid h-7 w-7 place-items-center rounded-full text-[10px] font-bold bg-amber-soft text-primary">AI</div>
+                            <div class="rounded-2xl px-3.5 py-2 leading-snug max-w-[80%] bg-secondary text-ink">Thanks for calling Peak Home Remodeling, this is Riley — how can I help?</div>
+                        </div>
+                        <div class="flex gap-2.5 text-sm flex-row-reverse">
+                            <div class="shrink-0 grid h-7 w-7 place-items-center rounded-full text-[10px] font-bold bg-secondary text-ink">SM</div>
+                            <div class="rounded-2xl px-3.5 py-2 leading-snug max-w-[80%] bg-ink text-white">Hi, I&#x27;m looking to get a quote on a kitchen remodel.</div>
+                        </div>
+                        <div class="flex gap-2.5 text-sm ">
+                            <div class="shrink-0 grid h-7 w-7 place-items-center rounded-full text-[10px] font-bold bg-amber-soft text-primary">AI</div>
+                            <div class="rounded-2xl px-3.5 py-2 leading-snug max-w-[80%] bg-secondary text-ink">Absolutely, I can get that scheduled. Can I grab your name and the best number to reach you?</div>
+                        </div>
+                        <div class="flex gap-2.5 text-sm flex-row-reverse">
+                            <div class="shrink-0 grid h-7 w-7 place-items-center rounded-full text-[10px] font-bold bg-secondary text-ink">SM</div>
+                            <div class="rounded-2xl px-3.5 py-2 leading-snug max-w-[80%] bg-ink text-white">Sarah Mitchell, 512-555-0134.</div>
+                        </div>
+                        <div class="flex gap-2.5 text-sm ">
+                            <div class="shrink-0 grid h-7 w-7 place-items-center rounded-full text-[10px] font-bold bg-amber-soft text-primary">AI</div>
+                            <div class="rounded-2xl px-3.5 py-2 leading-snug max-w-[80%] bg-secondary text-ink">Perfect, Sarah. A rough size — full gut, or cabinets and counters?</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="features" class="py-20 md:py-28">
+            <div class="mx-auto max-w-7xl px-5">
+                <div class="max-w-2xl" style="opacity:0;transform:translateY(24px)">
+                    <div class="text-primary font-semibold text-sm uppercase tracking-wider">What&#x27;s included</div>
+                    <h2 class="mt-3 text-3xl md:text-5xl font-black tracking-tight text-ink">Everything a great receptionist does. Without the salary.</h2>
+                </div>
+                <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div class="" style="opacity:0;transform:translateY(24px)">
+                        <div class="group h-full rounded-2xl bg-card border border-border p-6 hover:border-primary/40 hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300">
+                            <div class="grid h-11 w-11 place-items-center rounded-xl bg-amber-soft text-primary group-hover:bg-gradient-amber group-hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-5 w-5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg></div>
+                            <h3
+                                class="mt-5 text-lg font-bold text-ink">Answers 24/7</h3>
+                                <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Weekends, nights, holidays, lunch breaks — every call gets picked up on the first two rings.</p>
+                        </div>
+                    </div>
+                    <div class="" style="opacity:0;transform:translateY(24px)">
+                        <div class="group h-full rounded-2xl bg-card border border-border p-6 hover:border-primary/40 hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300">
+                            <div class="grid h-11 w-11 place-items-center rounded-xl bg-amber-soft text-primary group-hover:bg-gradient-amber group-hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap h-5 w-5" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg></div>
+                            <h3
+                                class="mt-5 text-lg font-bold text-ink">Instant lead capture</h3>
+                                <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Name, number, address, job type and urgency — every time. No more hand-scribbled notes.</p>
+                        </div>
+                    </div>
+                    <div class="" style="opacity:0;transform:translateY(24px)">
+                        <div class="group h-full rounded-2xl bg-card border border-border p-6 hover:border-primary/40 hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300">
+                            <div class="grid h-11 w-11 place-items-center rounded-xl bg-amber-soft text-primary group-hover:bg-gradient-amber group-hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call h-5 w-5"
+                                    aria-hidden="true"><path d="M13 2a9 9 0 0 1 9 9"></path><path d="M13 6a5 5 0 0 1 5 5"></path><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg></div>
+                            <h3
+                                class="mt-5 text-lg font-bold text-ink">Smart warm transfers</h3>
+                                <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Emergency? RenovReach patches the call straight to your cell. Estimate? It books itself.</p>
+                        </div>
+                    </div>
+                    <div class="" style="opacity:0;transform:translateY(24px)">
+                        <div class="group h-full rounded-2xl bg-card border border-border p-6 hover:border-primary/40 hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300">
+                            <div class="grid h-11 w-11 place-items-center rounded-xl bg-amber-soft text-primary group-hover:bg-gradient-amber group-hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar h-5 w-5" aria-hidden="true"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg></div>
+                            <h3
+                                class="mt-5 text-lg font-bold text-ink">Books into your calendar</h3>
+                                <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Google, Outlook, or your CRM. RenovReach checks availability and confirms the slot in the same call.</p>
+                        </div>
+                    </div>
+                    <div class="" style="opacity:0;transform:translateY(24px)">
+                        <div class="group h-full rounded-2xl bg-card border border-border p-6 hover:border-primary/40 hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300">
+                            <div class="grid h-11 w-11 place-items-center rounded-xl bg-amber-soft text-primary group-hover:bg-gradient-amber group-hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check h-5 w-5"
+                                    aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg></div>
+                            <h3
+                                class="mt-5 text-lg font-bold text-ink">Sounds human. Really.</h3>
+                                <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Trained on 10,000+ contractor calls. Callers don&#x27;t realize they&#x27;re talking to AI — until you tell them.</p>
+                        </div>
+                    </div>
+                    <div class="" style="opacity:0;transform:translateY(24px)">
+                        <div class="group h-full rounded-2xl bg-card border border-border p-6 hover:border-primary/40 hover:shadow-lift hover:-translate-y-0.5 transition-all duration-300">
+                            <div class="grid h-11 w-11 place-items-center rounded-xl bg-amber-soft text-primary group-hover:bg-gradient-amber group-hover:text-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench h-5 w-5" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"></path></svg></div>
+                            <h3
+                                class="mt-5 text-lg font-bold text-ink">Built for the trades</h3>
+                                <p class="mt-2 text-sm text-muted-foreground leading-relaxed">Knows the difference between a p-trap and a p-tile. Set up specifically for remodel, HVAC, plumbing, roofing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20 md:py-28 bg-secondary/40">
+            <div class="mx-auto max-w-7xl px-5">
+                <div class="max-w-2xl" style="opacity:0;transform:translateY(24px)">
+                    <div class="text-primary font-semibold text-sm uppercase tracking-wider">Contractors love it</div>
+                    <h2 class="mt-3 text-3xl md:text-5xl font-black tracking-tight text-ink">5+ Business trust RenovReach with their phone.</h2>
+                </div>
+                <div class="mt-14 grid md:grid-cols-2 gap-5">
+                    <div class="" style="opacity:0;transform:translateY(24px)">
+                        <div class="h-full rounded-2xl bg-card border border-border p-7 shadow-soft">
+                            <div class="flex gap-0.5 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                    aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                    aria-hidden="true">
+                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                        aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                        aria-hidden="true">
+                                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                            aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg></div>
+                            <p
+                                class="mt-4 text-lg text-ink leading-relaxed">&quot;
+                                <!-- -->I was losing 3-4 estimates a week to voicemail. Signed up Monday, live by Wednesday. Booked 3 extra jobs the first month.
+                                <!-- -->&quot;</p>
+                                <div class="mt-6 flex items-center gap-3 pt-5 border-t border-border">
+                                    <div class="grid h-11 w-11 place-items-center rounded-full bg-gradient-amber text-white font-bold text-sm">MA</div>
+                                    <div class="min-w-0">
+                                        <div class="text-sm font-bold text-ink truncate">Mike Alvarez</div>
+                                        <div class="text-xs text-muted-foreground truncate">Owner, Alvarez Kitchen &amp; Bath
+                                            <!-- -->·
+                                            <!-- -->Austin, TX</div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="" style="opacity:0;transform:translateY(24px)">
+                        <div class="h-full rounded-2xl bg-card border border-border p-7 shadow-soft">
+                            <div class="flex gap-0.5 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                    aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                    aria-hidden="true">
+                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                        aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                        aria-hidden="true">
+                                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                            aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg></div>
+                            <p
+                                class="mt-4 text-lg text-ink leading-relaxed">&quot;
+                                <!-- -->My wife used to answer the phone at dinner. Now RenovReach does it. Callers can&#x27;t tell the difference and I get every lead texted to me.
+                                <!-- -->&quot;</p>
+                                <div class="mt-6 flex items-center gap-3 pt-5 border-t border-border">
+                                    <div class="grid h-11 w-11 place-items-center rounded-full bg-gradient-amber text-white font-bold text-sm">DW</div>
+                                    <div class="min-w-0">
+                                        <div class="text-sm font-bold text-ink truncate">Dana Whitfield</div>
+                                        <div class="text-xs text-muted-foreground truncate">Owner, Whitfield HVAC
+                                            <!-- -->·
+                                            <!-- -->Charlotte, NC</div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="" style="opacity:0;transform:translateY(24px)">
+                        <div class="h-full rounded-2xl bg-card border border-border p-7 shadow-soft">
+                            <div class="flex gap-0.5 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                    aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                    aria-hidden="true">
+                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                        aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                        aria-hidden="true">
+                                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                            aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg></div>
+                            <p
+                                class="mt-4 text-lg text-ink leading-relaxed">&quot;
+                                <!-- -->Best money I spend all month. Paid for itself the first weekend three after-hours calls, two became jobs.
+                                <!-- -->&quot;</p>
+                                <div class="mt-6 flex items-center gap-3 pt-5 border-t border-border">
+                                    <div class="grid h-11 w-11 place-items-center rounded-full bg-gradient-amber text-white font-bold text-sm">RC</div>
+                                    <div class="min-w-0">
+                                        <div class="text-sm font-bold text-ink truncate">Ray Corvelli</div>
+                                        <div class="text-xs text-muted-foreground truncate">GC, Corvelli Remodeling
+                                            <!-- -->·
+                                            <!-- -->Denver, CO</div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="" style="opacity:0;transform:translateY(24px)">
+                        <div class="h-full rounded-2xl bg-card border border-border p-7 shadow-soft">
+                            <div class="flex gap-0.5 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                    aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                    aria-hidden="true">
+                                    <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                    </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                        aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                        aria-hidden="true">
+                                        <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current"
+                                            aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg></div>
+                            <p
+                                class="mt-4 text-lg text-ink leading-relaxed">&quot;
+                                <!-- -->Setup took two days. It transfers real emergencies to my cell and books everything else. Zero missed calls in 2 months.
+                                <!-- -->&quot;</p>
+                                <div class="mt-6 flex items-center gap-3 pt-5 border-t border-border">
+                                    <div class="grid h-11 w-11 place-items-center rounded-full bg-gradient-amber text-white font-bold text-sm">TB</div>
+                                    <div class="min-w-0">
+                                        <div class="text-sm font-bold text-ink truncate">Tasha Brooks</div>
+                                        <div class="text-xs text-muted-foreground truncate">Owner, Brooks Plumbing Co.
+                                            <!-- -->·
+                                            <!-- -->Nashville, TN</div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="pricing" class="py-20 md:py-28">
+            <div class="mx-auto max-w-7xl px-5">
+                <div class="max-w-2xl mx-auto text-center" style="opacity:0;transform:translateY(24px)">
+                    <div class="text-primary font-semibold text-sm uppercase tracking-wider">Simple pricing</div>
+                    <h2 class="mt-3 text-3xl md:text-5xl font-black tracking-tight text-ink">One flat rate. Pays for itself with one extra job.</h2>
+                    <p class="mt-4 text-lg text-muted-foreground">Most contractors book 5-15 additional jobs per month with RenovReach. You do the math.</p>
+                </div>
+                <div class="mt-14 max-w-lg mx-auto" style="opacity:0;transform:translateY(24px)">
+                    <div class="relative rounded-3xl bg-ink text-white p-8 md:p-10 shadow-lift overflow-hidden">
+                        <div class="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-gradient-amber opacity-30 blur-3xl"></div>
+                        <div class="relative">
+                            <div class="flex items-center justify-between">
+                                <div class="text-sm font-semibold text-primary">RenovReach Build</div>
+                                <div class="rounded-full bg-primary/20 border border-primary/30 text-primary text-xs font-semibold px-3 py-1">Own it outright</div>
+                            </div>
+                            <div class="mt-6 flex items-baseline gap-2"><span class="text-5xl md:text-6xl font-black tracking-tight">$2,447</span></div>
+                            <div class="mt-2 text-lg font-semibold text-white/90">one-time setup</div>
+                            <div class="mt-1 text-sm text-white/60">You own the system. Pay only for what you actually use.</div>
+                            <ul class="mt-8 space-y-3">
+                                <li class="flex items-start gap-3 text-sm text-white/90">
+                                    <div class="mt-0.5 shrink-0 grid h-5 w-5 place-items-center rounded-full bg-primary/20 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-3 w-3"
+                                            aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div>Full AI agent build &amp; training on your business</li>
+                                <li class="flex items-start gap-3 text-sm text-white/90">
+                                    <div class="mt-0.5 shrink-0 grid h-5 w-5 place-items-center rounded-full bg-primary/20 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-3 w-3"
+                                            aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div>Your own Retell AI account — billed directly by Retell for usage, no markup from us</li>
+                                <li class="flex items-start gap-3 text-sm text-white/90">
+                                    <div class="mt-0.5 shrink-0 grid h-5 w-5 place-items-center rounded-full bg-primary/20 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-3 w-3"
+                                            aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div>Booking into your Google or Outlook calendar</li>
+                                <li class="flex items-start gap-3 text-sm text-white/90">
+                                    <div class="mt-0.5 shrink-0 grid h-5 w-5 place-items-center rounded-full bg-primary/20 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-3 w-3"
+                                            aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div>SMS confirmations, rescheduling &amp; cancellations handled automatically</li>
+                                <li class="flex items-start gap-3 text-sm text-white/90">
+                                    <div class="mt-0.5 shrink-0 grid h-5 w-5 place-items-center rounded-full bg-primary/20 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-3 w-3"
+                                            aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div>Warm transfers to your cell for emergencies</li>
+                                <li class="flex items-start gap-3 text-sm text-white/90">
+                                    <div class="mt-0.5 shrink-0 grid h-5 w-5 place-items-center rounded-full bg-primary/20 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-3 w-3"
+                                            aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div>Call recordings &amp; transcripts — used to continuously fine-tune your AI for better results</li>
+                                <li class="flex items-start gap-3 text-sm text-white/90">
+                                    <div class="mt-0.5 shrink-0 grid h-5 w-5 place-items-center rounded-full bg-primary/20 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-3 w-3"
+                                            aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div>Lead texts sent straight to your phone</li>
+                                <li class="flex items-start gap-3 text-sm text-white/90">
+                                    <div class="mt-0.5 shrink-0 grid h-5 w-5 place-items-center rounded-full bg-primary/20 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-3 w-3"
+                                            aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div>30 days of hands-on support included</li>
+                                <li class="flex items-start gap-3 text-sm text-white/90">
+                                    <div class="mt-0.5 shrink-0 grid h-5 w-5 place-items-center rounded-full bg-primary/20 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-3 w-3"
+                                            aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></div>No recurring commitment — it&#x27;s yours after setup</li>
+                            </ul><button type="button" onclick="openCalendlyPopup()" class="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow px-8 mt-8 w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full h-12 text-base font-semibold shadow-amber">Book a Discovery Call <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-1 h-4 w-4" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+                            <div
+                                class="mt-4 text-center text-xs text-white/60">Want us to keep managing and improving it for you? <button type="button" onclick="openCalendlyPopup()" class="text-primary hover:underline">Ask about our optional $299/month support plan</button> after your first 30 days.</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+                <section id="faq" class="py-20 md:py-28 bg-secondary/40">
+            <div class="mx-auto max-w-3xl px-5">
+                <div class="text-center" style="opacity:0;transform:translateY(24px)">
+                    <div class="text-primary font-semibold text-sm uppercase tracking-wider">Questions</div>
+                    <h2 class="mt-3 text-3xl md:text-5xl font-black tracking-tight text-ink">Answers to what most contractors ask us.</h2>
+                </div>
+                <div class="mt-12 space-y-3" style="opacity:0;transform:translateY(24px)">
+                    <details class="border border-border rounded-2xl bg-card px-5 shadow-soft transition-shadow open:shadow-lift" open>
+                        <summary class="text-left text-base md:text-lg font-semibold text-ink hover:no-underline py-5 cursor-pointer list-none">Is this really AI? Won't my customers know?</summary>
+                        <div class="text-muted-foreground leading-relaxed pb-5">Yes it's AI — and no, they usually don't. RenovReach uses a natural conversational voice trained specifically on contractor calls. If someone asks directly, we're honest — but 9 out of 10 callers just get their appointment booked and hang up happy.</div>
+                    </details>
+                    <details class="border border-border rounded-2xl bg-card px-5 shadow-soft transition-shadow open:shadow-lift">
+                        <summary class="text-left text-base md:text-lg font-semibold text-ink hover:no-underline py-5 cursor-pointer list-none">What if a caller has a real emergency and needs a human?</summary>
+                        <div class="text-muted-foreground leading-relaxed pb-5">RenovReach is trained to recognize urgent situations — active leaks, no heat in winter, no A/C in summer, gas smells. When it detects an emergency, it warm-transfers the call directly to your cell (or a backup number you choose). You never miss a real emergency.</div>
+                    </details>
+                    <details class="border border-border rounded-2xl bg-card px-5 shadow-soft transition-shadow open:shadow-lift">
+                        <summary class="text-left text-base md:text-lg font-semibold text-ink hover:no-underline py-5 cursor-pointer list-none">How fast can I get set up?</summary>
+                        <div class="text-muted-foreground leading-relaxed pb-5">Most contractors are live within 48 hours. Kickoff call Monday, script tuning Tuesday, live answering Wednesday. We handle the phone forwarding setup with your carrier.</div>
+                    </details>
+                    <details class="border border-border rounded-2xl bg-card px-5 shadow-soft transition-shadow open:shadow-lift">
+                        <summary class="text-left text-base md:text-lg font-semibold text-ink hover:no-underline py-5 cursor-pointer list-none">What's the contract?</summary>
+                        <div class="text-muted-foreground leading-relaxed pb-5">There isn't one. It's a one-time setup fee — you own the system outright, no recurring contract. If you want us to keep managing and improving it afterward, that's an optional $299/month support plan you can start or stop anytime, no lock-in.</div>
+                    </details>
+                    <details class="border border-border rounded-2xl bg-card px-5 shadow-soft transition-shadow open:shadow-lift">
+                        <summary class="text-left text-base md:text-lg font-semibold text-ink hover:no-underline py-5 cursor-pointer list-none">Does it work with my existing phone number?</summary>
+                        <div class="text-muted-foreground leading-relaxed pb-5">Yes. We set up call forwarding on your current business line so it rings RenovReach first. Nothing changes for your customers.</div>
+                    </details>
+                    <details class="border border-border rounded-2xl bg-card px-5 shadow-soft transition-shadow open:shadow-lift">
+                        <summary class="text-left text-base md:text-lg font-semibold text-ink hover:no-underline py-5 cursor-pointer list-none">What trades do you support?</summary>
+                        <div class="text-muted-foreground leading-relaxed pb-5">Remodel (kitchen, bath, whole-home), HVAC, plumbing, roofing, electrical, general contracting, and painting. If you take booked appointments over the phone, we can handle your calls.</div>
+                    </details>
+                </div>
+            </div>
+        </section>
+        <section id="cta" class="py-20 md:py-28">
+            <div class="mx-auto max-w-6xl px-5">
+                <div class="relative overflow-hidden rounded-3xl bg-ink text-white p-8 md:p-14 shadow-lift">
+                    <div class="absolute -top-32 -right-20 h-72 w-72 rounded-full bg-gradient-amber opacity-40 blur-3xl"></div>
+                    <div class="absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-primary/30 opacity-30 blur-3xl"></div>
+                    <div class="relative grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
+                        <div class="" style="opacity:0;transform:translateY(24px)">
+                            <div class="text-primary font-semibold text-sm uppercase tracking-wider">See it live</div>
+                            <h2 class="mt-3 text-3xl md:text-5xl font-black tracking-tight"><span class="neg">Stop losing jobs to voicemail</span>. Start booking them instead.</h2>
+                            <p class="mt-4 text-white/70 text-lg leading-relaxed">Book a 15-minute demo. We&#x27;ll show you RenovReach handling calls for a business just like yours — and quote you a live setup timeline.</p>
+                            <div class="mt-6 flex items-center gap-3 text-sm text-white/70"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-4 w-4 text-primary"
+                                    aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg> No sales pressure — a real human, 15 minutes.</div>
+                        </div>
+                        <div class="" style="opacity:0;transform:translateY(24px)">
+                            <form onsubmit="handleBookingForm(event)" class="rounded-2xl bg-white p-6 md:p-7 text-ink shadow-lift">
+                                <h3 class="text-xl font-bold">Book your demo</h3>
+                                <p class="mt-1 text-sm text-muted-foreground">Takes 30 seconds.</p>
+                                <div class="mt-5 space-y-3">
+                                    <div><label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs font-semibold" for="name">Your name</label><input class="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mt-1.5 h-11 rounded-lg"
+                                            id="name" required="" maxLength="80" placeholder="Mike Alvarez" name="name" /></div>
+                                    <div><label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs font-semibold" for="business">Business name</label><input class="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mt-1.5 h-11 rounded-lg"
+                                            id="business" required="" maxLength="120" placeholder="Alvarez Kitchen &amp; Bath" name="business" /></div>
+                                    <div><label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs font-semibold" for="phone">Phone</label><input type="tel" class="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mt-1.5 h-11 rounded-lg"
+                                            id="phone" required="" maxLength="20" placeholder="(555) 123-4567" name="phone" /></div>
+                                    <div><label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs font-semibold" for="email">Email</label><input type="email" class="flex w-full border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mt-1.5 h-11 rounded-lg"
+                                            id="email" required="" maxLength="254" pattern="[^@\s]+@[^@\s]+\.[a-zA-Z]{2,}" title="Enter a valid email address, e.g. mike@alvarezkb.com" placeholder="mike@alvarezkb.com" name="email" /></div>
+                                    <div><label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs font-semibold" for="trade">Trade</label><select id="trade" name="trade" required class="flex w-full border border-input bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 mt-1.5 h-11 rounded-lg">
+                                            <option value="" disabled selected>Select your trade</option>
+                                            <option value="General Contracting">General Contracting</option>
+                                            <option value="Plumbing">Plumbing</option>
+                                            <option value="Electrical">Electrical</option>
+                                            <option value="HVAC">HVAC</option>
+                                            <option value="Roofing">Roofing</option>
+                                            <option value="Landscaping">Landscaping</option>
+                                            <option value="Painting">Painting</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow px-4 py-2 mt-5 w-full h-12 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-amber"
+                                    type="submit">Book my demo <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-1 h-4 w-4" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+                                <div
+                                    class="mt-3 text-center text-xs text-muted-foreground">Or call us: <a href="tel:+18885551234" class="font-semibold text-ink hover:text-primary">(888) 555-1234</a></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <footer class="border-t border-border py-12">
+        <div class="mx-auto max-w-7xl px-5">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 font-bold text-lg text-ink">
+                        <div class="grid h-8 w-8 place-items-center rounded-lg bg-gradient-amber shadow-amber"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-call h-4 w-4 text-white"
+                                aria-hidden="true"><path d="M13 2a9 9 0 0 1 9 9"></path><path d="M13 6a5 5 0 0 1 5 5"></path><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg></div>RenovReach</div>
+                    <p
+                        class="mt-4 text-sm text-muted-foreground max-w-sm leading-relaxed">The AI voice receptionist built for contractors and home-service pros. <span class="neg">Never miss</span> another job.</p>
+                </div>
+                <div>
+                    <div class="text-sm font-bold text-ink">Product</div>
+                    <ul class="mt-4 space-y-2.5 text-sm text-muted-foreground">
+                        <li><a href="#how" class="hover:text-ink">How it works</a></li>
+                        <li><a href="#demo" class="hover:text-ink">Live demo</a></li>
+                        <li><a href="#features" class="hover:text-ink">Features</a></li>
+                        <li><a href="#pricing" class="hover:text-ink">Pricing</a></li>
+                        <li><a href="#faq" class="hover:text-ink">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-sm font-bold text-ink">Contact</div>
+                    <ul class="mt-4 space-y-2.5 text-sm text-muted-foreground">
+                        <li><a href="tel:+18885551234" class="hover:text-ink">(888) 555-1234</a></li>
+                        <li><a href="mailto:contact@renovreach.com" class="hover:text-ink">contact@renovreach.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
+                <div>©
+                    <!-- -->2026
+                    <!-- -->RenovReach All rights reserved.</div>
+                <div class="flex items-center gap-5"><a href="#" class="hover:text-ink">Privacy</a><a href="#" class="hover:text-ink">Terms</a><a href="#" class="hover:text-ink">Security</a></div>
+            </div>
+        </div>
+    </footer>
+    <section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text" aria-atomic="false"></section>
+    </div>
+    <script>
+        (function(a, f) {
+            let l;
+            try {
+                l = JSON.parse(sessionStorage.getItem(a) || "{}")
+            } catch {
+                return
+            }
+            const n = l?.[f || history.state?.__TSR_key];
+            let c = !1;
+            for (const t in n) {
+                const e = n[t],
+                    o = e?.scrollX,
+                    s = e?.scrollY;
+                if (Number.isFinite(o) && Number.isFinite(s)) {
+                    if (t === "window") scrollTo(o, s), c = !0;
+                    else if (t) try {
+                        const r = document.querySelector(t);
+                        r && (r.scrollLeft = o, r.scrollTop = s)
+                    } catch {}
+                }
+            }
+            if (c) return;
+            const i = location.hash.slice(1);
+            if (i) {
+                const t = history.state?.__hashScrollIntoViewOptions ?? !0;
+                if (t) {
+                    const e = document.getElementById(i);
+                    e && e.scrollIntoView(t)
+                }
+                return
+            }
+            scrollTo(0, 0)
+        })("tsr-scroll-restoration-v1_3");
+        try { document.currentScript.remove() } catch(e) {}
+    </script>
+    <!--/$-->
+    <script class="$tsr" id="$tsr-stream-barrier">
+        (self.$R = self.$R || {})["tsr"] = [];
+        self.$_TSR = {
+            h() {
+                this.hydrated = !0, this.c()
+            },
+            e() {
+                this.streamEnded = !0, this.c()
+            },
+            c() {
+                this.hydrated && this.streamEnded && (delete self.$_TSR, delete self.$R.tsr)
+            },
+            p(e) {
+                this.initialized ? e() : this.buffer.push(e)
+            },
+            buffer: []
+        };
+        $_TSR.router = ($R => $R[0] = {
+            manifest: $R[1] = {
+                routes: $R[2] = {
+                    __root__: $R[3] = {
+                        preloads: $R[4] = ["/assets/index-DeP7Jmel.js"],
+                        scripts: $R[5] = [$R[6] = {
+                            attrs: $R[7] = {
+                                type: "module",
+                                async: !0,
+                                src: "/assets/index-DeP7Jmel.js"
+                            }
+                        }]
+                    },
+                    "/": $R[8] = {
+                        preloads: $R[9] = ["/assets/routes-CKhzjwwG.js"]
+                    }
+                }
+            },
+            matches: $R[10] = [$R[11] = {
+                i: "__root__ ",
+                u: 1786176319700,
+                s: "success",
+                ssr: !0
+            }, $R[12] = {
+                i: "  ",
+                u: 1786176319700,
+                s: "success",
+                ssr: !0
+            }],
+            lastMatchId: "  "
+        })($R["tsr"]);
+        $_TSR.e();
+        document.currentScript.remove()
+    </script>
+    <script>
+        function openCalendlyPopup(prefill = {}) {
+            const calendlyUrl = 'https://calendly.com/renovreach/15min';
+            if (window.Calendly?.initPopupWidget) {
+                window.Calendly.initPopupWidget({
+                    url: calendlyUrl,
+                    prefill: {
+                        name: prefill.name || '',
+                        email: prefill.email || '',
+                        customAnswers: {
+                            a1: prefill.business || '',
+                            a2: prefill.trade || ''
+                        }
+                    }
+                });
+                return;
+            }
+            const params = new URLSearchParams();
+            if (prefill.name) params.set('name', prefill.name);
+            if (prefill.email) params.set('email', prefill.email);
+            if (prefill.business) params.set('a1', prefill.business);
+            if (prefill.trade) params.set('a2', prefill.trade);
+            const targetUrl = params.toString() ? `${calendlyUrl}?${params.toString()}` : calendlyUrl;
+            window.open(targetUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        function handleBookingForm(event) {
+            event.preventDefault();
+            const form = event.currentTarget;
+            const data = new FormData(form);
+            const name = String(data.get('name') || '').trim();
+            const email = String(data.get('email') || '').trim();
+            const business = String(data.get('business') || '').trim();
+            const trade = String(data.get('trade') || '').trim();
+            openCalendlyPopup({
+                name,
+                email,
+                business,
+                trade
+            });
+        }
+
+        let mobileMenuOpen = false;
+        function toggleMobileMenu(btn) {
+            mobileMenuOpen = !mobileMenuOpen;
+            const panel = document.getElementById('mobileMenuPanel');
+            if (!panel) return;
+            if (mobileMenuOpen) {
+                panel.style.opacity = '1';
+                panel.style.pointerEvents = 'auto';
+                panel.style.transform = 'translateY(0)';
+            } else {
+                panel.style.opacity = '0';
+                panel.style.pointerEvents = 'none';
+                panel.style.transform = 'translateY(-8px)';
+            }
+        }
+        function closeMobileMenu() {
+            mobileMenuOpen = false;
+            const panel = document.getElementById('mobileMenuPanel');
+            if (panel) {
+                panel.style.opacity = '0';
+                panel.style.pointerEvents = 'none';
+                panel.style.transform = 'translateY(-8px)';
+            }
+        }
+
+        function toggleFaq(trigger) {
+            const item = trigger.closest('.faq-item');
+            if (!item) return;
+            const content = item.querySelector('.faq-content');
+            const svg = trigger.querySelector('svg.lucide-chevron-down');
+            const isOpen = item.getAttribute('data-state') === 'open';
+            if (isOpen) {
+                item.setAttribute('data-state', 'closed');
+                trigger.setAttribute('data-state', 'closed');
+                trigger.setAttribute('aria-expanded', 'false');
+                if (content) content.hidden = true;
+                if (svg) svg.style.transform = 'rotate(0deg)';
+                item.classList.remove('shadow-lift');
+                item.classList.add('shadow-soft');
+            } else {
+                item.setAttribute('data-state', 'open');
+                trigger.setAttribute('data-state', 'open');
+                trigger.setAttribute('aria-expanded', 'true');
+                if (content) content.hidden = false;
+                if (svg) svg.style.transform = 'rotate(180deg)';
+                item.classList.remove('shadow-soft');
+                item.classList.add('shadow-lift');
+            }
+        }
+
+        let demoPlaying = false;
+        function toggleDemoPlay(btn) {
+            demoPlaying = !demoPlaying;
+            const container = btn.closest('.rounded-3xl') || btn.closest('section');
+            const bars = container ? container.querySelectorAll('.wave-bar') : [];
+            const progress = container ? container.querySelector('.h-1.rounded-full > div') : null;
+            const timeEl = container ? container.querySelector('.text-xs.font-mono.text-muted-foreground') : null;
+            if (demoPlaying) {
+                bars.forEach(b => { b.style.animationPlayState = 'running'; });
+                btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4 text-primary-foreground" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+                let pct = 0;
+                if (window.__demoTimer) clearInterval(window.__demoTimer);
+                window.__demoTimer = setInterval(() => {
+                    pct += (100 / 42);
+                    if (pct >= 100) { pct = 0; demoPlaying = false; clearInterval(window.__demoTimer); btn.innerHTML = '<div class="w-0 h-0 border-y-[7px] border-y-transparent border-l-[11px] border-l-current ml-1"></div>'; bars.forEach(b => { b.style.animationPlayState = 'paused'; }); if (progress) progress.style.width = '0%'; if (timeEl) timeEl.textContent = '0:00 / 0:42'; }
+                    if (progress) progress.style.width = Math.min(pct, 100) + '%';
+                    if (timeEl) {
+                        const sec = Math.min(Math.floor((pct / 100) * 42), 42);
+                        timeEl.textContent = '0:' + String(sec).padStart(2, '0') + ' / 0:42';
+                    }
+                }, 1000);
+            } else {
+                if (window.__demoTimer) clearInterval(window.__demoTimer);
+                bars.forEach(b => { b.style.animationPlayState = 'paused'; });
+                btn.innerHTML = '<div class="w-0 h-0 border-y-[7px] border-y-transparent border-l-[11px] border-l-current ml-1"></div>';
+            }
+        }
+
+        (function fixVisibilityFallback() {
+            function reveal() {
+                const items = document.querySelectorAll('[style*="opacity:0"]');
+                items.forEach(el => {
+                    try {
+                        const rect = el.getBoundingClientRect();
+                        const vh = window.innerHeight || document.documentElement.clientHeight;
+                        if (rect.top < vh * 0.95) {
+                            el.style.transition = (el.style.transition ? el.style.transition + ', ' : '') + 'opacity 500ms ease, transform 500ms ease';
+                            el.style.opacity = '1';
+                            if (el.style.transform && el.style.transform.indexOf('translate') !== -1) {
+                                el.style.transform = el.style.transform.replace(/translate[XY]?\([^)]*\)/g, '').trim() || 'none';
+                                if (el.style.transform === '' || el.style.transform === 'none') el.style.transform = 'none';
+                            }
+                        }
+                    } catch(e) {}
+                });
+            }
+            const start = function() {
+                reveal();
+                window.addEventListener('scroll', reveal, { passive: true });
+                window.addEventListener('resize', reveal, { passive: true });
+                setTimeout(reveal, 200);
+                setTimeout(reveal, 800);
+                setTimeout(reveal, 1600);
+                setTimeout(reveal, 3000);
+            };
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', start);
+            } else {
+                start();
+            }
+        })();
+
+        (function wireUpButtons() {
+            const go = function() {
+                const demoPlay = document.querySelectorAll('button[aria-label="Play"], button[aria-label="Pause"]');
+                demoPlay.forEach(b => {
+                    if (!b.getAttribute('data-wired')) {
+                        b.setAttribute('data-wired', '1');
+                        b.addEventListener('click', () => toggleDemoPlay(b));
+                    }
+                });
+                const faqBtns = document.querySelectorAll('button.faq-trigger');
+                faqBtns.forEach(b => {
+                    if (!b.getAttribute('data-wired')) {
+                        b.setAttribute('data-wired', '1');
+                        b.addEventListener('click', () => toggleFaq(b));
+                    }
+                });
+            };
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', go);
+            } else {
+                go();
+            }
+        })();
+    </script>
+    <script type="module" async="" src="/assets/index-DeP7Jmel.js"></script>
+</body>
+
+</html>
