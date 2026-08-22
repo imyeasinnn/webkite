@@ -32,7 +32,19 @@
         function openMobileMenu() {
             const panel = document.getElementById('mobileMenuPanel');
             const button = document.getElementById('mobileMenuBtn');
-            if (!panel || !button) return;
+            if (!panel) return;
+
+            panel.classList.add('mobile-panel-open');
+            panel.style.display = 'block';
+            panel.style.opacity = '1';
+            panel.style.pointerEvents = 'auto';
+            panel.style.visibility = 'visible';
+            panel.style.transform = 'translateY(0)';
+            panel.setAttribute('aria-hidden', 'false');
+            if (button) {
+                button.setAttribute('aria-expanded', 'true');
+                button.classList.add('mobile-menu-open');
+            }
 
             panel.classList.add('mobile-panel-open');
             panel.setAttribute('aria-hidden', 'false');
